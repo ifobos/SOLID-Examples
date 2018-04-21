@@ -17,11 +17,12 @@ class Handler {
     
     private func parse(data: Data) -> [String] {
         // parse the data and create the array
-        return []
+        return ["string 1", "string 2"]
     }
     
     private func saveToDB(array: [String]) {
         // save the array in a database (CoreData/Realm/...)
+        print("Data Saved: \(array)")
     }
 }
 

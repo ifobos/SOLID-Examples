@@ -3,55 +3,22 @@
 import UIKit
 import XCTest
 
-protocol Storage {
-    func save(string: String)
-}
-
-class Handler {
-    
-    let storage: Storage
-    
-    init(storage: Storage) {
-        self.storage = storage
-    }
-    
-    func handle(string: String) {
-        print("HANDLING " + string)
-        storage.save(string: string)
-    }
-}
-
-class FilesystemManager: Storage {
-    
-    func save(string: String) {
-        // Open a file in read-mode
-        // Save the string in this file
-        // Close the file
-        print(string + " SAVED in FilesystemManager")
-    }
-}
-
-class DatabaseManager: Storage {
-    
-    func save(string: String) {
-        // Connect to the database
-        // Execute the query to save the string in a table
-        // Close the connection
-        print(string + " SAVED in DatabaseManager")
-    }
-}
-
-// MARK: - Use
-
+print("\n=======================================================\n")
+print("Handler with FilesystemManager:\n")
 let filesystemManager = FilesystemManager()
 let handlerA = Handler(storage: filesystemManager)
 handlerA.handle(string: "qwerty")
 
+print("\n=======================================================\n")
+print("Handler with DatabaseManager:\n")
 let databaseManager = DatabaseManager()
 let handlerB = Handler(storage: databaseManager)
 handlerB.handle(string: "asdf")
 
+
 // MARK: - Test
+print("\n=======================================================\n")
+print("Test:\n")
 
 class MockStorage: Storage {
     

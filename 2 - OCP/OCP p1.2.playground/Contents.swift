@@ -1,46 +1,6 @@
 //: Playground - noun: a place where people can play
 
-import UIKit
-
-class Logger {
-    
-    func printData(cars: [Car], bicycles: [Bicycle]) {
-        cars.forEach { car in
-            print(car.printDetails())
-        }
-        bicycles.forEach { bicycles in
-            print(bicycles.printDetails())
-        }
-    }
-}
-
-class Car {
-    let name: String
-    let color: String
-    
-    init(name: String, color: String) {
-        self.name = name
-        self.color = color
-    }
-    
-    func printDetails() -> String {
-        return "I'm \(name) and my color is \(color)"
-    }
-}
-
-class Bicycle {
-    let type: String
-    
-    init(type: String) {
-        self.type = type
-    }
-    
-    func printDetails() -> String {
-        return "I'm a \(type)"
-    }
-}
-
-// MARK: - Use
+import Foundation
 
 let cars = [
     Car(name: "Batmobile", color: "Black"),

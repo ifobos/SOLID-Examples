@@ -2,32 +2,6 @@
 
 import UIKit
 
-class Rectangle {
-    
-    var width: Float = 0
-    var length: Float = 0
-    
-    var area: Float {
-        return width * length
-    }
-    
-    func duplicateArea() {
-        width *= 2
-    }
-}
-
-class Square: Rectangle {
-    
-    override var width: Float {
-        didSet {
-            length = width
-        }
-    }
-}
-
-
-// MARK: - Use
-
 func duplicateArea(of rectangle: Rectangle) {
     print("Old area: \(rectangle.area)")
     rectangle.duplicateArea()
